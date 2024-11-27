@@ -11,14 +11,14 @@ concept -> cin ,cout
 
     Enum and Typedef
 
-compound assignment -> convenience 
+1. compound assignment -> convenience 
     x = x + 1 ;
     x += 1 ;
 
     x = x + 2 ;
     x += 2 ;
     wont work : x++ ;
-increment , decrement
+2. increment , decrement
     x = 1 ;
     x++ ;
     ++x ;
@@ -27,4 +27,12 @@ increment , decrement
     b = ++x ;
 postfix -> x++, prefix ->   ++x 
 
+
+
+3. (TODO) sizeof oprator
+4. (TODO) typedef
+
+
+
+5. cout <<" welcome , this is cpp  \"class\"  \\  "   <<<
 */
