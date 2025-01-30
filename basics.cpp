@@ -35,4 +35,9 @@ postfix -> x++, prefix ->   ++x
 
 
 5. cout <<" welcome , this is cpp  \"class\"  \\  "   <<<
+6. Type conversion -> cout << (int)5.5 << endl;   // double 5.5 → int 5
+n] setprecision(n) -> decimal places (use chatgpt to understand)
+
+7. if , else , else if -> conditional statements    
+
 */
