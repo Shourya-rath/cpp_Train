@@ -8,6 +8,7 @@
 videos : 28 to 31
 
 topics covered : </br>
+- Containers - Intro </br>
 - Vectors </br>
 - Pairs </br>
 - Iterators </br>
