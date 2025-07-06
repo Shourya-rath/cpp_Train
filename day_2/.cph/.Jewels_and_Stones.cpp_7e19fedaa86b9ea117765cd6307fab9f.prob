@@ -1,0 +1,1 @@
+{"name":"Local: Jewels_and_Stones","url":"d:\\shourya(main)\\dsa_cp\\cpp_Train\\day_2\\Jewels_and_Stones.cpp","tests":[{"id":1749221342845,"input":"4\nabc\nabcdef\naA\nabAZ\naaa\na\nwhat\nnone","output":"3\n2\n1\n0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\shourya(main)\\dsa_cp\\cpp_Train\\day_2\\Jewels_and_Stones.cpp","group":"local","local":true}

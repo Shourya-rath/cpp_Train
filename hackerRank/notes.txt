@@ -1,0 +1,82 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int n, q;
+    cin >> n >> q;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+    // This will hold entries like "tag1.tag2~name" → "value"
+    unordered_map<string, string> attr_map;
+
+    // Stack to keep current nesting path: ["tag1","tag2",...]
+    vector<string> tag_stack;
+
+    string line;
+    while (n--) {
+        getline(cin, line);
+        // Trim leading spaces
+        int i = 0;
+        while (i < (int)line.size() && isspace(line[i])) i++;
+
+        if (line[i+1] == '/') {
+            // Closing tag: pop one level
+            tag_stack.pop_back();
+        } else {
+            // Opening tag: parse tag-name and attributes
+            i++; // skip '<'
+            // read tag name
+            string tag;
+            while (i < (int)line.size() && isalnum(line[i])) {
+                tag.push_back(line[i++]);
+            }
+            tag_stack.push_back(tag);
+
+            // build the prefix: "tag1.tag2.tag3"
+            string prefix = tag_stack[0];
+            for (int k = 1; k < (int)tag_stack.size(); k++) {
+                prefix += "." + tag_stack[k];
+            }
+
+            // parse attributes until we hit '>'
+            while (i < (int)line.size() && line[i] != '>') {
+                // skip whitespace
+                while (i < (int)line.size() && isspace(line[i])) i++;
+                // read attribute name
+                string attr;
+                while (i < (int)line.size() && isalnum(line[i])) {
+                    attr.push_back(line[i++]);
+                }
+                // skip spaces, '=', spaces, and the opening '"'
+                while (i < (int)line.size() && (line[i] == ' ' || line[i] == '=' || line[i] == '"'))
+                    i++;
+                // read value
+                string value;
+                while (i < (int)line.size() && line[i] != '"') {
+                    value.push_back(line[i++]);
+                }
+                // now at the closing '"'
+                // store in map under key "prefix~attr"
+                attr_map[prefix + "~" + attr] = value;
+                // skip the closing '"' (and any spaces before next attr)
+                i++;
+            }
+        }
+    }
+
+    // Answer queries
+    while (q--) {
+        string query;
+        getline(cin, query);
+        auto it = attr_map.find(query);
+        if (it == attr_map.end())
+            cout << "Not Found!\n";
+        else
+            cout << it->second << "\n";
+    }
+
+    return 0;
+}

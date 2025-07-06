@@ -1,0 +1,5 @@
+2 2
+<tagX>
+</tagX>
+tagX~any
+tagX.tagY~attr

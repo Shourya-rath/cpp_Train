@@ -1,0 +1,26 @@
+ runing while loop 
+current position where we are :- 0
+current element to be handled (using the current position):- 2
+2 4 6 8 10 12 2 16 18 20 
+ runing while loop 
+current position where we are :- 6
+current element to be handled (using the current position):- 14
+2 4 14 8 10 12 2 16 18 20 
+ runing while loop 
+current position where we are :- 2
+current element to be handled (using the current position):- 6
+2 4 14 8 10 12 2 16 6 20 
+ runing while loop 
+current position where we are :- 8
+current element to be handled (using the current position):- 18
+2 4 14 8 18 12 2 16 6 20 
+ runing while loop 
+current position where we are :- 4
+current element to be handled (using the current position):- 10
+10 4 14 8 18 12 2 16 6 20 
+ runing while loop 
+current position where we are :- 0
+current element to be handled (using the current position):- 2
+10 4 14 8 18 12 2 16 6 20 
+arr :- 2 4 6 8 10 12 14 16 18 20 
+arr GFG :- 10 4 14 8 18 12 2 16 6 20 
